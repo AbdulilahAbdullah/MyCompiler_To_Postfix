@@ -20,6 +20,7 @@ int main() {
 	init();
 	parse();
 	putchar('\n');
+	err << "Compiled successfully";
 	output.close();
 	input.close();
 	err.close();
