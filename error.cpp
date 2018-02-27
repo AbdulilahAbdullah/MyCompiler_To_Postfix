@@ -14,10 +14,10 @@ void error(int m) {
 		err << lineno << " : Lexemes array is full.";
 		break;
 	case 3:
-		err << lineno << " :Compiler error \'IDentifier is too long.\'";
+		err << lineno << " :Compiler error \'Identifier is too long.\'";
 		break;
 	default:
-		err << lineno << " : "; err.put(m); err << " is expected before the statement. "; err.put(m);
+		err << lineno << " : \'"; err.put(m); err << "\' is expected before the statement.";
 	}
 	output.close(); output.open("output.obj");
 	output << "An error occurred. Check error file for more info.";
