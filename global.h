@@ -22,6 +22,8 @@ using namespace std;
 #define DO 266
 #define AFTERWHILECOND 267
 #define ENDWHILE 268
+#define BEGIN 269
+#define END 270
 
 #define SYMMAX 100
 int lookup(char s[]);
