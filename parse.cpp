@@ -1,19 +1,56 @@
 #include "global.h"
 
-int lexan();
-void emit(int t, int tval);
-void error(int m);
-void expr();
-void term();
-void match(int);
-void factor();
 
 
 void parse() {
 	lookahead = lexan();
 	while (lookahead != DONE) {
-		expr(); 
-		match(';'); output<<endl<<endl<<endl;
+		stmt();
+		match(';'); output<<endl;
+	}
+}
+void stmt()
+{
+
+	while (true)
+	{
+		int t;
+		switch (lookahead)
+		{
+		case ID:	
+			t = tokenval;
+			match(ID);
+			match('=');
+			expr();
+			emit(FID, t);
+			break;
+		case IF:
+			
+			match(IF);
+			match('(');
+			expr();
+			match(')');
+			emit(IF, NONE);
+			match(THEN);
+			stmt();
+			emit(ELSE, NONE);
+			break;
+		case WHILE:	
+			emit(WHILE, NONE);		
+			match(WHILE);
+			match('(');
+			expr();
+			match(')');
+			emit(AFTERWHILECOND, NONE);
+			match(DO);
+			stmt();
+			emit(ENDWHILE, NONE);
+			break;
+		default:
+			return;
+
+		}
+
 	}
 }
 
