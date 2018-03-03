@@ -2,10 +2,13 @@
 struct entry keywords[] = {
 	{(char*)"div", DIV},
 	{(char*)"mod", MOD},
+	{(char*)"if", IF },
+	{(char*)"then",THEN},
+	{(char*)"while" ,WHILE},
+	{(char*)"do",DO},
 	{0, 0}
 };
 
-int insert(char s[], int tok);
 
 void init() {
 	struct entry *p;
