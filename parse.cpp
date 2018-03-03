@@ -46,6 +46,23 @@ void stmt()
 			stmt();
 			emit(ENDWHILE, NONE);
 			break;
+		case BEGIN:
+			emit(BEGIN, NONE);
+			match(BEGIN);
+			while (1)
+			{
+				if (lookahead == END)
+				{
+					match(END);
+					break;
+				}
+					
+				stmt();		
+				match(';');
+			}
+			emit(END, NONE);
+			break;
+		
 		default:
 			return;
 
