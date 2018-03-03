@@ -1,7 +1,7 @@
 #include "global.h"
 
 void emit(int t, int tval) {
-	string nameOfOp="hell";
+	string nameOfOp;
 	switch (t)
 	{
 	case '+':nameOfOp = "add "; break;
