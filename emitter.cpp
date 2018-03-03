@@ -49,6 +49,12 @@ void emit(int t, int tval) {
 	case ENDWHILE :
 		output << "while\nendwhile\n";
 		break;
+	case BEGIN :
+		output << "Begin\n";
+		break;
+	case END:
+		output << "End\n";
+		break;
 	default:
 		output << "token " << t << ",tokenval " << tval << endl; 
 		break;
