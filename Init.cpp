@@ -6,6 +6,8 @@ struct entry keywords[] = {
 	{(char*)"then",THEN},
 	{(char*)"while" ,WHILE},
 	{(char*)"do",DO},
+	{(char*)"begin",BEGIN},
+	{(char*)"end" , END},
 	{0, 0}
 };
 
